@@ -72,8 +72,8 @@ async def start_interview(flow_manager: FlowManager) -> tuple[None, NodeConfig]:
 
 
 async def conclude_interview(flow_manager: FlowManager) -> tuple[None, NodeConfig]:
-    """Call after answering one candidate question, then move to conclusion."""
-    logger.info("One Q&A complete — transitioning to conclusion")
+    """Call once the candidate has presented a sound approach, then wrap up."""
+    logger.info("Candidate approach is ready — transitioning to conclusion")
     from_node = getattr(flow_manager, "current_node", None) or "Discussion"
     to_node = "Conclusion"
     _record_flow(
@@ -130,35 +130,26 @@ def create_discussion_node() -> NodeConfig:
     return NodeConfig(
         name="Discussion",
         context_strategy=ContextStrategyConfig(strategy=ContextStrategy.RESET),
-        pre_actions=[
-            {
-                "type": "tts_say",
-                "text": "Let's get started. Here's the question.",
-                "append_text_to_context": False,
-            }
-        ],
         task_messages=[
             {
                 "role": "developer",
                 "content": (
                     "You are now in the discussion phase of the interview.\n\n"
-                    "Do not greet the candidate or say hello. The pre-action has already "
-                    "introduced this phase. Start directly with the coding problem.\n\n"
+                    "Introduce the coding problem briefly and naturally. Do not dump the "
+                    "full prompt or greet the candidate again.\n\n"
                     "The full coding problem for this round is below. It is for YOUR "
-                    "context/summary only — do NOT do NOT recite "
-                    "examples or constraints, and do NOT dump the full prompt.\n\n"
-                    "FIRST TURN (opening): do only the following, briefly:\n"
-                    "1. Introduce that you have a coding problem for them (climbing stairs / "
-                    "counting distinct ways with 1- or 2-step moves).\n"
-                    "2. Summarize what is expected in one or two short sentences.\n"
-                    "3. Tell them the full question is now available in the left panel, "
-                    "so they should read it through carefully there and let you know "
-                    "if they have any questions.\n"
-                    "Then stop and wait.\n\n"
-                    "AFTER the candidate asks one question: answer it helpfully and briefly "
-                    "in plain speech (no code dumps unless they specifically ask for a "
-                    "tiny clarifying detail). Then immediately call conclude_interview. "
-                    "Do not invite more questions. Do not stay in this phase for a second Q&A.\n\n"
+                    "context only — do not recite examples or constraints, and do not dump "
+                    "the full prompt.\n\n"
+                    "The candidate may ask clarifying questions, propose an approach, revise "
+                    "their approach, or ask for guidance. Answer questions that are relevant "
+                    "to the problem. Help them reason toward a solution, point out mistakes "
+                    "when needed, and give small hints instead of solving the problem for "
+                    "them.\n\n"
+                    "Keep the discussion going. Do not call conclude_interview after the first "
+                    "question or answer. Only call conclude_interview after the candidate has "
+                    "discussed an approach that is sound and valid, and you are satisfied that "
+                    "the approach has been sufficiently discussed. For now, accept any sound "
+                    "valid approach without judging whether it is optimal.\n\n"
                     "--- FULL PROBLEM (context only) ---\n"
                     f"{INTERVIEW_QUESTION_MD}"
                 ),
