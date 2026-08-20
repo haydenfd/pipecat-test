@@ -130,11 +130,20 @@ def create_discussion_node() -> NodeConfig:
     return NodeConfig(
         name="Discussion",
         context_strategy=ContextStrategyConfig(strategy=ContextStrategy.RESET),
+        pre_actions=[
+            {
+                "type": "tts_say",
+                "text": "Let's get started. Here's the question.",
+                "append_text_to_context": False,
+            }
+        ],
         task_messages=[
             {
                 "role": "developer",
                 "content": (
                     "You are now in the discussion phase of the interview.\n\n"
+                    "Do not greet the candidate or say hello. The pre-action has already "
+                    "introduced this phase. Start directly with the coding problem.\n\n"
                     "The full coding problem for this round is below. It is for YOUR "
                     "context/summary only — do NOT do NOT recite "
                     "examples or constraints, and do NOT dump the full prompt.\n\n"
