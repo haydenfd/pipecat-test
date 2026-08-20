@@ -4,27 +4,27 @@ from loguru import logger
 from pipecat.flows import FlowManager, NodeConfig
 
 
-async def record_like(flow_manager: FlowManager, liked: bool) -> tuple[str, NodeConfig]:
-    """Record the user's yes/no answer and transition to the goodbye node."""
-    logger.info("User likes this: {}", liked)
-    return "liked" if liked else "not liked", create_goodbye_node()
+async def record_color(flow_manager: FlowManager, color: str) -> tuple[str, NodeConfig]:
+    """Log the user's favorite color and transition to the goodbye node."""
+    logger.info("User's favorite color: {}", color)
+    return color, create_goodbye_node()
 
 
 def create_greeting_node() -> NodeConfig:
-    """Build the first node that greets the user and asks the starter question."""
+    """Build the first node that greets the user and asks for their favorite color."""
     return NodeConfig(
         name="greeting",
         role_message=(
             "You are a friendly voice assistant. Be brief. "
-            "Ask whether the user likes Pipecat, then use record_like."
+            "Ask for the user's favorite color, then use record_color."
         ),
         task_messages=[
             {
                 "role": "developer",
-                "content": "Say hello and ask if the user likes Pipecat.",
+                "content": "Say hello and ask the user for their favorite color.",
             }
         ],
-        functions=[record_like],
+        functions=[record_color],
     )
 
 
