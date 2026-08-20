@@ -5,7 +5,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from loguru import logger
-from pipecat.flows import FlowManager, NodeConfig
+from pipecat.flows import ContextStrategy, ContextStrategyConfig, FlowManager, NodeConfig
 
 if TYPE_CHECKING:
     from session_recorder import SessionRecorder
@@ -129,13 +129,14 @@ def create_discussion_node() -> NodeConfig:
     """Introduce the coding problem; full text is context-only, not read aloud."""
     return NodeConfig(
         name="Discussion",
+        context_strategy=ContextStrategyConfig(strategy=ContextStrategy.RESET),
         task_messages=[
             {
                 "role": "developer",
                 "content": (
                     "You are now in the discussion phase of the interview.\n\n"
                     "The full coding problem for this round is below. It is for YOUR "
-                    "context only — do NOT read it aloud word-for-word, do NOT recite "
+                    "context/summary only — do NOT do NOT recite "
                     "examples or constraints, and do NOT dump the full prompt.\n\n"
                     "FIRST TURN (opening): do only the following, briefly:\n"
                     "1. Introduce that you have a coding problem for them (climbing stairs / "
