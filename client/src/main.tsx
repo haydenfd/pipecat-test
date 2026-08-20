@@ -9,7 +9,7 @@ import './style.css';
 
 function App() {
   return (
-    <ThemeProvider>
+    <ThemeProvider defaultTheme="dark">
       <div className="app-shell">
         <ConsoleTemplate
           transportType="smallwebrtc"

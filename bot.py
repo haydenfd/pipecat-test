@@ -1,12 +1,9 @@
-"""Minimal Pipecat Flows bot with the built-in SmallWebRTC dev runner."""
+"""Pipecat bot entrypoint and SmallWebRTC pipeline orchestration."""
 
-import os
-
-from dotenv import load_dotenv
 from loguru import logger
 
 from pipecat.audio.vad.silero import SileroVADAnalyzer
-from pipecat.flows import FlowManager, NodeConfig
+from pipecat.flows import FlowManager
 from pipecat.pipeline.pipeline import Pipeline
 from pipecat.pipeline.worker import PipelineParams, PipelineWorker
 from pipecat.processors.aggregators.llm_context import LLMContext
@@ -16,75 +13,17 @@ from pipecat.processors.aggregators.llm_response_universal import (
 )
 from pipecat.runner.types import RunnerArguments
 from pipecat.runner.utils import create_transport
-from pipecat.services.deepgram.stt import DeepgramSTTService
-from pipecat.services.deepgram.tts import DeepgramTTSService
-from pipecat.services.groq.llm import GroqLLMService
 from pipecat.transports.base_transport import BaseTransport, TransportParams
 from pipecat.workers.runner import WorkerRunner
 
-# Prefer local developer files, while keeping `.env` as a fallback.
-load_dotenv(".env", override=False)
-load_dotenv("env.local", override=True)
-load_dotenv(".env.local", override=True)
-
-
-async def record_like(flow_manager: FlowManager, liked: bool) -> tuple[str, NodeConfig]:
-    """Handle the user's answer and move to the short goodbye node."""
-    logger.info("User likes this: {}", liked)
-    return "liked" if liked else "not liked", create_goodbye_node()
-
-
-def create_greeting_node() -> NodeConfig:
-    return NodeConfig(
-        name="greeting",
-        role_message=(
-            "You are a friendly voice assistant. Be brief. "
-            "Ask whether the user likes Pipecat, then use record_like."
-        ),
-        task_messages=[
-            {
-                "role": "developer",
-                "content": "Say hello and ask if the user likes Pipecat.",
-            }
-        ],
-        functions=[record_like],
-    )
-
-
-def create_goodbye_node() -> NodeConfig:
-    return NodeConfig(
-        name="goodbye",
-        task_messages=[
-            {
-                "role": "developer",
-                "content": "Thank the user and say goodbye.",
-            }
-        ],
-        post_actions=[{"type": "end_conversation"}],
-    )
+from config import get_bot_config
+from flow import create_greeting_node
+from services import create_services
 
 
 async def run_bot(transport: BaseTransport, runner_args: RunnerArguments) -> None:
-    stt = DeepgramSTTService(
-        api_key=os.getenv("DEEPGRAM_API_KEY", ""),
-        settings=DeepgramSTTService.Settings(model="nova-3", language="en-US"),
-    )
-    tts = DeepgramTTSService(
-        api_key=os.getenv("DEEPGRAM_API_KEY", ""),
-        settings=DeepgramTTSService.Settings(voice="aura-2-thalia-en"),
-    )
-    llm = GroqLLMService(
-        api_key=os.getenv("GROQ_API_KEY", ""),
-        settings=GroqLLMService.Settings(
-            model="openai/gpt-oss-120b",
-            temperature=0.4,
-            max_completion_tokens=512,
-            extra={
-                "reasoning_effort": "low",
-            },
-        ),
-    )
-
+    """Assemble the audio pipeline, wire FlowManager, and run one bot worker."""
+    services = create_services(get_bot_config())
     context = LLMContext()
     context_aggregator = LLMContextAggregatorPair(
         context,
@@ -96,10 +35,10 @@ async def run_bot(transport: BaseTransport, runner_args: RunnerArguments) -> Non
     pipeline = Pipeline(
         [
             transport.input(),
-            stt,
+            services.stt,
             context_aggregator.user(),
-            llm,
-            tts,
+            services.llm,
+            services.tts,
             transport.output(),
             context_aggregator.assistant(),
         ]
@@ -107,7 +46,7 @@ async def run_bot(transport: BaseTransport, runner_args: RunnerArguments) -> Non
     worker = PipelineWorker(
         pipeline,
         params=PipelineParams(
-            allow_interruptions=True,
+            allow_interruptions=False,
             enable_metrics=True,
             enable_usage_metrics=True,
         ),
@@ -115,27 +54,33 @@ async def run_bot(transport: BaseTransport, runner_args: RunnerArguments) -> Non
     )
     flow_manager = FlowManager(
         worker=worker,
-        llm=llm,
+        llm=services.llm,
         context_aggregator=context_aggregator,
         transport=transport,
     )
 
+    # Start the greeting Flow only after SmallWebRTC has finished connecting.
     @transport.event_handler("on_client_connected")
     async def on_client_connected(transport: BaseTransport, client) -> None:
+        """Initialize the conversation when a browser client joins the session."""
         logger.info("Client connected")
         await flow_manager.initialize(create_greeting_node())
 
+    # Cancel the worker when the browser disconnects so the next session starts cleanly.
     @transport.event_handler("on_client_disconnected")
     async def on_client_disconnected(transport: BaseTransport, client) -> None:
+        """Stop the session worker and release its pipeline resources."""
         logger.info("Client disconnected")
         await worker.cancel()
 
+    # WorkerRunner owns the event loop and keeps the pipeline alive until shutdown.
     runner = WorkerRunner(handle_sigint=runner_args.handle_sigint)
     await runner.add_workers(worker)
     await runner.run()
 
 
 async def bot(runner_args: RunnerArguments) -> None:
+    """Create the audio-only SmallWebRTC transport for the Pipecat runner."""
     transport = await create_transport(
         runner_args,
         {
@@ -152,6 +97,7 @@ async def bot(runner_args: RunnerArguments) -> None:
 
 
 if __name__ == "__main__":
+    # The Pipecat development runner exposes /api/offer and starts the server.
     from pipecat.runner.run import main
 
     main()
