@@ -17,8 +17,9 @@ from pipecat.transports.base_transport import BaseTransport, TransportParams
 from pipecat.workers.runner import WorkerRunner
 
 from config import get_bot_config
-from flow import create_intro_node
+from flow import create_intro_node, set_session_recorder
 from services import create_services
+from session_recorder import SessionRecorder
 
 
 async def run_bot(transport: BaseTransport, runner_args: RunnerArguments) -> None:
@@ -32,6 +33,10 @@ async def run_bot(transport: BaseTransport, runner_args: RunnerArguments) -> Non
             filter_incomplete_user_turns=True,
         ),
     )
+    recorder = SessionRecorder()
+    recorder.bind_context(context)
+    set_session_recorder(recorder)
+
     pipeline = Pipeline(
         [
             transport.input(),
@@ -51,6 +56,7 @@ async def run_bot(transport: BaseTransport, runner_args: RunnerArguments) -> Non
             enable_usage_metrics=True,
         ),
         idle_timeout_secs=runner_args.pipeline_idle_timeout_secs,
+        observers=[recorder],
     )
     flow_manager = FlowManager(
         worker=worker,
@@ -64,19 +70,29 @@ async def run_bot(transport: BaseTransport, runner_args: RunnerArguments) -> Non
     async def on_client_connected(transport: BaseTransport, client) -> None:
         """Initialize the conversation when a browser client joins the session."""
         logger.info("Client connected")
+        recorder.record("client_connected")
+        recorder.start()
         await flow_manager.initialize(create_intro_node())
+        node_name = getattr(flow_manager, "current_node", None) or "Intro"
+        recorder.record("flow_node_entered", {"node": node_name})
 
     # Cancel the worker when the browser disconnects so the next session starts cleanly.
     @transport.event_handler("on_client_disconnected")
     async def on_client_disconnected(transport: BaseTransport, client) -> None:
         """Stop the session worker and release its pipeline resources."""
         logger.info("Client disconnected")
+        recorder.record("client_disconnected")
         await worker.cancel()
+        recorder.save(reason="client_disconnected")
 
-    # WorkerRunner owns the event loop and keeps the pipeline alive until shutdown.
-    runner = WorkerRunner(handle_sigint=runner_args.handle_sigint)
-    await runner.add_workers(worker)
-    await runner.run()
+    try:
+        # WorkerRunner owns the event loop and keeps the pipeline alive until shutdown.
+        runner = WorkerRunner(handle_sigint=runner_args.handle_sigint)
+        await runner.add_workers(worker)
+        await runner.run()
+    finally:
+        recorder.save(reason="pipeline_shutdown")
+        set_session_recorder(None)
 
 
 async def bot(runner_args: RunnerArguments) -> None:

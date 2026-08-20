@@ -1,7 +1,14 @@
 """Conversation nodes and actions for the interview flow."""
 
+from __future__ import annotations
+
+from typing import TYPE_CHECKING
+
 from loguru import logger
 from pipecat.flows import FlowManager, NodeConfig
+
+if TYPE_CHECKING:
+    from session_recorder import SessionRecorder
 
 # In production this comes from the DB and is injected per session.
 # Keep the full problem text here so Discussion can put it in LLM context
@@ -37,16 +44,43 @@ Each time you can either climb 1 or 2 steps. In how many distinct ways can you c
 - `1 <= n <= 45`
 """.strip()
 
+_session_recorder: SessionRecorder | None = None
+
+
+def set_session_recorder(recorder: SessionRecorder | None) -> None:
+    """Attach the active session recorder for flow transition events."""
+    global _session_recorder
+    _session_recorder = recorder
+
+
+def _record_flow(event: str, data: dict | None = None) -> None:
+    if _session_recorder is not None:
+        _session_recorder.record(event, data)
+
 
 async def start_interview(flow_manager: FlowManager) -> tuple[None, NodeConfig]:
     """Call when the user confirms they are ready to begin the interview."""
     logger.info("User is ready — transitioning to discussion")
+    from_node = getattr(flow_manager, "current_node", None) or "Intro"
+    to_node = "Discussion"
+    _record_flow(
+        "flow_transition",
+        {"from": from_node, "to": to_node, "via": "start_interview"},
+    )
+    _record_flow("flow_node_entered", {"node": to_node})
     return None, create_discussion_node()
 
 
 async def conclude_interview(flow_manager: FlowManager) -> tuple[None, NodeConfig]:
     """Call after answering one candidate question, then move to conclusion."""
     logger.info("One Q&A complete — transitioning to conclusion")
+    from_node = getattr(flow_manager, "current_node", None) or "Discussion"
+    to_node = "Conclusion"
+    _record_flow(
+        "flow_transition",
+        {"from": from_node, "to": to_node, "via": "conclude_interview"},
+    )
+    _record_flow("flow_node_entered", {"node": to_node})
     return None, create_conclusion_node()
 
 
@@ -55,10 +89,24 @@ def create_intro_node() -> NodeConfig:
     return NodeConfig(
         name="Intro",
         role_message=(
-            "You are a calm, professional technical interview coach. "
-            "Speak briefly and naturally — your words are spoken aloud, "
-            "so avoid lists, markdown, code, or special characters. "
-            "You must use the available function to progress when appropriate."
+            "You are a software engineering technical interviewer conducting a live voice interview.\n"
+            "\n"
+            "Act like a thoughtful human interviewer. Let the candidate drive the solution. "
+            "Listen to their reasoning and use it to guide how you respond.\n"
+            "\n"
+            "Do not reveal the solution, provide the final algorithm, or solve the problem "
+            "for the candidate. When the candidate needs help, prefer the smallest useful "
+            "hint rather than giving away the answer.\n"
+            "\n"
+            "Ask one question at a time.\n"
+            "\n"
+            "Prefer concise responses when a short response is sufficient, but use "
+            "additional explanation when it is genuinely useful.\n"
+            "\n"
+            "Everything you write will be spoken aloud. Write for listening, not for reading. "
+            "Express technical notation and code naturally for text-to-speech.\n"
+            "\n"
+            "Do not use markdown, code fences, bullets, headings, tables, or other visual formatting."
         ),
         task_messages=[
             {
@@ -126,10 +174,21 @@ def create_conclusion_node() -> NodeConfig:
         ],
         post_actions=[
             {
+                "type": "function",
+                "handler": _record_end_conversation,
+            },
+            {
                 "type": "end_conversation",
             }
         ],
     )
+
+
+async def _record_end_conversation(action: dict, flow_manager: FlowManager) -> None:
+    """Mark conversation end in the session log before the transport tears down."""
+    _record_flow("end_conversation", {"node": getattr(flow_manager, "current_node", None)})
+    if _session_recorder is not None:
+        _session_recorder.save(reason="end_conversation")
 
 
 # Back-compat alias if anything still imports the old name.
