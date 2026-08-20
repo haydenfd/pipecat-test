@@ -25,6 +25,8 @@ def create_services(config: BotConfig) -> BotServices:
         settings=DeepgramSTTService.Settings(
             model=config.stt_model,
             language=config.stt_language,
+            # Preserve spoken fillers such as "uh" and "um" in transcripts.
+            extra={"filler_words": True},
         ),
     )
     tts = DeepgramTTSService(
