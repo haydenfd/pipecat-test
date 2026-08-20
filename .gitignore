@@ -1,0 +1,10 @@
+.env
+.env.local
+env.local
+.venv/
+.uv-cache/
+__pycache__/
+*.py[cod]
+node_modules/
+dist/
+.DS_Store

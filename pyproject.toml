@@ -1,0 +1,13 @@
+[project]
+name = "pipecat-flows-starter"
+version = "0.1.0"
+description = "A small Pipecat Flows voice assistant using SmallWebRTC."
+requires-python = ">=3.10"
+dependencies = [
+  "pipecat-ai[deepgram,groq,runner,silero,webrtc]",
+  "python-dotenv>=1.0.1",
+  "loguru>=0.7.3",
+]
+
+[tool.uv]
+package = false
