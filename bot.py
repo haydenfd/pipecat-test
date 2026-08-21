@@ -17,7 +17,7 @@ from pipecat.transports.base_transport import BaseTransport, TransportParams
 from pipecat.workers.runner import WorkerRunner
 
 from config import get_bot_config
-from flow import create_intro_node, set_session_recorder
+from nodes import create_intro_node, set_session_recorder
 from services import create_services
 from session_recorder import SessionRecorder
 
