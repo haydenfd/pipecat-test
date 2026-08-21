@@ -6,14 +6,14 @@ import unittest
 from nodes import (
     create_complexity_followup_node,
     create_discussion_node,
-    record_approach,
     record_complexity,
+    start_complexity_followup,
 )
 
 
 class InterviewFlowTests(unittest.TestCase):
     def test_discussion_transitions_to_complexity_followup(self) -> None:
-        _, next_node = asyncio.run(record_approach(None, "Use a hash map."))
+        _, next_node = asyncio.run(start_complexity_followup(None))
 
         self.assertEqual(next_node["name"], "complexity_followup")
 
@@ -30,12 +30,12 @@ class InterviewFlowTests(unittest.TestCase):
         _, next_node = asyncio.run(record_complexity(None, "O(n)", "O(1)"))
 
         self.assertEqual(next_node["name"], "conclusion")
-        self.assertEqual(next_node["post_actions"], [{"type": "end_conversation"}])
+        self.assertEqual(next_node["post_actions"][-1], {"type": "end_conversation"})
 
     def test_discussion_exposes_the_approach_transition(self) -> None:
         node = create_discussion_node()
 
-        self.assertEqual(node["functions"], [record_approach])
+        self.assertEqual(node["functions"], [start_complexity_followup])
 
 
 if __name__ == "__main__":

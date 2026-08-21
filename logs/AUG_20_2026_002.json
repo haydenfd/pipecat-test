@@ -1,0 +1,1160 @@
+{
+  "session_id": "70b2cbf2-8b1b-43a2-8632-567db6de16c2",
+  "started_at": "2026-08-20T15:57:23.301131+00:00",
+  "ended_at": "2026-08-20T15:58:06.964194+00:00",
+  "events": [
+    {
+      "timestamp": "2026-08-20T15:57:23.301104+00:00",
+      "event": "client_connected",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T15:57:23.301132+00:00",
+      "event": "session_started",
+      "data": {
+        "session_id": "70b2cbf2-8b1b-43a2-8632-567db6de16c2"
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:23.303054+00:00",
+      "event": "flow_node_entered",
+      "data": {
+        "node": "Intro"
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:24.414342+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramSTTService#0",
+            "model": null,
+            "value": 0.0
+          },
+          {
+            "processor": "DeepgramSTTService#0",
+            "model": null,
+            "value": 0.0
+          },
+          {
+            "processor": "GroqLLMService#0",
+            "model": null,
+            "value": 0.0
+          },
+          {
+            "processor": "GroqLLMService#0",
+            "model": null,
+            "value": 0.0
+          },
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": null,
+            "value": 0.0
+          },
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": null,
+            "value": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:25.043419+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": 0.6259799003601074
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:25.210669+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "value": 0.002577066421508789
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:25.210682+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "value": 0.00026416778564453125
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:25.212409+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": {
+              "prompt_tokens": 1119,
+              "completion_tokens": 57,
+              "total_tokens": 1176,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_tokens": 37,
+              "input_audio_tokens": null,
+              "output_audio_tokens": null,
+              "cache_read_input_audio_tokens": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:25.212425+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": {
+              "prompt_tokens": 1119,
+              "completion_tokens": 57,
+              "total_tokens": 1176,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_tokens": 37,
+              "input_audio_tokens": null,
+              "output_audio_tokens": null,
+              "cache_read_input_audio_tokens": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:25.213893+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": 0.796677827835083
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:25.213915+00:00",
+      "event": "assistant_response",
+      "data": {
+        "text": "Hello! Are you ready to begin the interview?"
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:25.216662+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "value": 0.0042819976806640625
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:25.216676+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "value": 6.890296936035156e-05
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:25.393148+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "value": 0.1813821792602539
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:25.394472+00:00",
+      "event": "bot_started_speaking",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T15:57:25.526858+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "ttfa": 0.4443821792602539,
+            "ttfb": 0.1813821792602539,
+            "leading_silence": 0.263
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:28.071544+00:00",
+      "event": "bot_stopped_speaking",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T15:57:30.902740+00:00",
+      "event": "user_started_speaking",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T15:57:30.904355+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramSTTService#0",
+            "model": "nova-3",
+            "value": 0.0006489753723144531
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:31.376235+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "BaseSmartTurn",
+            "model": null,
+            "is_complete": true,
+            "probability": 0.9793655872344971,
+            "e2e_processing_time_ms": 55.07666600169614
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:31.405834+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramSTTService#0",
+            "model": "nova-3",
+            "value": {
+              "audio_seconds": 7.357999999999931
+            }
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:31.405854+00:00",
+      "event": "user_transcript",
+      "data": {
+        "text": "Yes."
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:31.435396+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramSTTService#0",
+            "model": "nova-3",
+            "value": 0.31543827056884766
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:31.963456+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": 0.49185681343078613
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:32.068685+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": {
+              "prompt_tokens": 1142,
+              "completion_tokens": 29,
+              "total_tokens": 1171,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_tokens": 9,
+              "input_audio_tokens": null,
+              "output_audio_tokens": null,
+              "cache_read_input_audio_tokens": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:32.069236+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": {
+              "prompt_tokens": 1142,
+              "completion_tokens": 29,
+              "total_tokens": 1171,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_tokens": 9,
+              "input_audio_tokens": null,
+              "output_audio_tokens": null,
+              "cache_read_input_audio_tokens": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:32.070162+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": 0.5990757942199707
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:32.070964+00:00",
+      "event": "flow_transition",
+      "data": {
+        "from": "Intro",
+        "to": "Discussion",
+        "via": "start_interview"
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:32.070971+00:00",
+      "event": "flow_node_entered",
+      "data": {
+        "node": "Discussion"
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:32.071092+00:00",
+      "event": "user_stopped_speaking",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T15:57:32.400069+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": 0.3226189613342285
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:32.626698+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "value": 0.0879049301147461
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:32.626710+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "value": 0.000102996826171875
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:32.677376+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": {
+              "prompt_tokens": 1800,
+              "completion_tokens": 86,
+              "total_tokens": 1886,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_tokens": 11,
+              "input_audio_tokens": null,
+              "output_audio_tokens": null,
+              "cache_read_input_audio_tokens": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:32.677394+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": {
+              "prompt_tokens": 1800,
+              "completion_tokens": 86,
+              "total_tokens": 1886,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_tokens": 11,
+              "input_audio_tokens": null,
+              "output_audio_tokens": null,
+              "cache_read_input_audio_tokens": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:32.677910+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": 0.6006431579589844
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:32.677922+00:00",
+      "event": "assistant_response",
+      "data": {
+        "text": "I have a coding problem for you about climbing stairs: given n steps, you can take 1 or 2 steps at a time, and you need to count how many distinct ways to reach the top. The full question is in the left panel; please read it carefully and let me know if you have any questions."
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:32.678589+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "value": 0.04975581169128418
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:32.678600+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "value": 9.608268737792969e-05
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:32.758953+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "value": 0.13201570510864258
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:32.759613+00:00",
+      "event": "bot_started_speaking",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T15:57:32.884471+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "ttfa": 0.3860157051086426,
+            "ttfb": 0.13201570510864258,
+            "leading_silence": 0.254
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:47.872173+00:00",
+      "event": "bot_stopped_speaking",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T15:57:50.783719+00:00",
+      "event": "user_started_speaking",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T15:57:50.785633+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramSTTService#0",
+            "model": "nova-3",
+            "value": 0.0008521080017089844
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:52.491545+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "BaseSmartTurn",
+            "model": null,
+            "is_complete": false,
+            "probability": 0.005710512399673462,
+            "e2e_processing_time_ms": 49.14675001055002
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:52.534913+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramSTTService#0",
+            "model": "nova-3",
+            "value": {
+              "audio_seconds": 21.11999999999964
+            }
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:52.534926+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramSTTService#0",
+            "model": "nova-3",
+            "value": 0.2942683696746826
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:52.535335+00:00",
+      "event": "user_transcript",
+      "data": {
+        "text": "Sure. How big can"
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:53.459693+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "BaseSmartTurn",
+            "model": null,
+            "is_complete": false,
+            "probability": 0.020634442567825317,
+            "e2e_processing_time_ms": 55.66637497395277
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:53.507036+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramSTTService#0",
+            "model": "nova-3",
+            "value": {
+              "audio_seconds": 0.9800000000000005
+            }
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:53.507053+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramSTTService#0",
+            "model": "nova-3",
+            "value": 0.3052339553833008
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:53.507551+00:00",
+      "event": "user_transcript",
+      "data": {
+        "text": "number of"
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:53.507568+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramSTTService#0",
+            "model": "nova-3",
+            "value": 0.887721061706543
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:56.431934+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramSTTService#0",
+            "model": "nova-3",
+            "value": {
+              "audio_seconds": 2.920000000000002
+            }
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:56.431942+00:00",
+      "event": "user_transcript",
+      "data": {
+        "text": "stairs be or, like, n in this case?"
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:56.431949+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramSTTService#0",
+            "model": "nova-3",
+            "value": 2.5894620418548584
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:56.440475+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "BaseSmartTurn",
+            "model": null,
+            "is_complete": true,
+            "probability": 0.7280358076095581,
+            "e2e_processing_time_ms": 55.780792026780546
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:56.521501+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramSTTService#0",
+            "model": "nova-3",
+            "value": 0.3399529457092285
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:56.887323+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": 0.35413503646850586
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:57.017398+00:00",
+      "event": "user_stopped_speaking",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T15:57:57.094172+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": {
+              "prompt_tokens": 1894,
+              "completion_tokens": 55,
+              "total_tokens": 1949,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_tokens": 10,
+              "input_audio_tokens": null,
+              "output_audio_tokens": null,
+              "cache_read_input_audio_tokens": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:57.094190+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": {
+              "prompt_tokens": 1894,
+              "completion_tokens": 55,
+              "total_tokens": 1949,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_tokens": 10,
+              "input_audio_tokens": null,
+              "output_audio_tokens": null,
+              "cache_read_input_audio_tokens": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:57.094772+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": 0.5618760585784912
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:57.094781+00:00",
+      "event": "assistant_response",
+      "data": {
+        "text": "The number of stairs n can be any integer from 1 up to 45."
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:57.095244+00:00",
+      "event": "flow_transition",
+      "data": {
+        "from": "Discussion",
+        "to": "Conclusion",
+        "via": "conclude_interview"
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:57.095249+00:00",
+      "event": "flow_node_entered",
+      "data": {
+        "node": "Conclusion"
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:57.096158+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "value": 0.0770869255065918
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:57.096168+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "value": 0.0001308917999267578
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:57.265777+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "value": 0.16962695121765137
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:57:57.266234+00:00",
+      "event": "bot_started_speaking",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T15:57:57.341958+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "ttfa": 0.28762695121765136,
+            "ttfb": 0.16962695121765137,
+            "leading_silence": 0.118
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:58:01.981596+00:00",
+      "event": "bot_stopped_speaking",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T15:58:02.299001+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": 0.30718207359313965
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:58:02.448074+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": {
+              "prompt_tokens": 2189,
+              "completion_tokens": 22,
+              "total_tokens": 2211,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_tokens": null,
+              "input_audio_tokens": null,
+              "output_audio_tokens": null,
+              "cache_read_input_audio_tokens": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:58:02.448100+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": {
+              "prompt_tokens": 2189,
+              "completion_tokens": 22,
+              "total_tokens": 2211,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_tokens": null,
+              "input_audio_tokens": null,
+              "output_audio_tokens": null,
+              "cache_read_input_audio_tokens": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:58:02.448837+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": 0.45714902877807617
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:58:02.448859+00:00",
+      "event": "assistant_response",
+      "data": {
+        "text": "I'm happy to call the interview to a close now—thank you for your time!"
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:58:02.449947+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "value": 0.036392927169799805
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:58:02.449964+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "value": 0.00016927719116210938
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:58:02.605119+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "value": 0.15504193305969238
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:58:02.605969+00:00",
+      "event": "bot_started_speaking",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T15:58:02.756937+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "ttfa": 0.4290419330596924,
+            "ttfb": 0.15504193305969238,
+            "leading_silence": 0.274
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:58:06.961313+00:00",
+      "event": "bot_stopped_speaking",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T15:58:06.964152+00:00",
+      "event": "end_conversation",
+      "data": {
+        "node": "Conclusion"
+      }
+    },
+    {
+      "timestamp": "2026-08-20T15:58:06.964194+00:00",
+      "event": "session_ended",
+      "data": {
+        "reason": "end_conversation"
+      }
+    }
+  ],
+  "conversation_history": [
+    {
+      "role": "developer",
+      "content": "Greet the candidate warmly in one short sentence, then ask if they are ready to begin the interview. Wait for a clear yes or confirmation. When they confirm, call start_interview. If they are not ready or ask a quick clarifying question, answer briefly and ask again when they are ready."
+    },
+    {
+      "role": "assistant",
+      "content": "✓ Hello! Are you ready to begin the interview?"
+    },
+    {
+      "role": "user",
+      "content": "Yes."
+    },
+    {
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "id": "fc_6bc10876-248e-4962-b64d-5bbbc71aee45",
+          "function": {
+            "name": "start_interview",
+            "arguments": "{}"
+          },
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "content": "{\"type\": \"async_tool\", \"status\": \"running\", \"tool_call_id\": \"fc_6bc10876-248e-4962-b64d-5bbbc71aee45\", \"description\": \"An asynchronous task associated with this tool_call_id has started running. Expect results to arrive later as developer messages that look roughly like this one (with 'type=async_tool' and a matching tool_call_id) but with a 'result' field. Note that there *may* be more than one result (i.e., a stream of results), but there doesn't have to be (there may be only one). The last result will come in a message with 'status=finished'.\"}",
+      "tool_call_id": "fc_6bc10876-248e-4962-b64d-5bbbc71aee45"
+    },
+    {
+      "role": "developer",
+      "content": "{\"type\": \"async_tool\", \"status\": \"finished\", \"tool_call_id\": \"fc_6bc10876-248e-4962-b64d-5bbbc71aee45\", \"description\": \"This is the final result for the asynchronous task associated with this tool_call_id. The task has completed. No further results will arrive for this tool_call_id.\", \"result\": \"{\\\"status\\\": \\\"acknowledged\\\"}\"}"
+    },
+    {
+      "role": "developer",
+      "content": "You are now in the discussion phase of the interview.\n\nThe full coding problem for this round is below. It is for YOUR context/summary only — do NOT do NOT recite examples or constraints, and do NOT dump the full prompt.\n\nFIRST TURN (opening): do only the following, briefly:\n1. Introduce that you have a coding problem for them (climbing stairs / counting distinct ways with 1- or 2-step moves).\n2. Summarize what is expected in one or two short sentences.\n3. Tell them the full question is now available in the left panel, so they should read it through carefully there and let you know if they have any questions.\nThen stop and wait.\n\nAFTER the candidate asks one question: answer it helpfully and briefly in plain speech (no code dumps unless they specifically ask for a tiny clarifying detail). Then immediately call conclude_interview. Do not invite more questions. Do not stay in this phase for a second Q&A.\n\n--- FULL PROBLEM (context only) ---\n# Climbing Stairs\n\nYou are climbing a staircase. It takes `n` steps to reach the top.\n\nEach time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?\n\n## Example 1\n\n**Input:** `n = 2`\n**Output:** `2`\n\n**Explanation:** There are two ways to climb to the top.\n1. 1 step + 1 step\n2. 2 steps\n\n## Example 2\n\n**Input:** `n = 3`\n**Output:** `3`\n\n**Explanation:** There are three ways to climb to the top.\n1. 1 step + 1 step + 1 step\n2. 1 step + 2 steps\n3. 2 steps + 1 step\n\n## Constraints\n\n- `1 <= n <= 45`"
+    },
+    {
+      "role": "assistant",
+      "content": "✓ I have a coding problem for you about climbing stairs: given n steps, you can take 1 or 2 steps at a time, and you need to count how many distinct ways to reach the top. The full question is in the left panel; please read it carefully and let me know if you have any questions."
+    },
+    {
+      "role": "user",
+      "content": "Sure. How big can number of stairs be or, like, n in this case?"
+    },
+    {
+      "role": "assistant",
+      "content": "✓ The number of stairs n can be any integer from 1 up to 45."
+    },
+    {
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "id": "fc_823b15cb-49c1-4604-973c-9171e4f67cc2",
+          "function": {
+            "name": "conclude_interview",
+            "arguments": "{}"
+          },
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "content": "{\"type\": \"async_tool\", \"status\": \"running\", \"tool_call_id\": \"fc_823b15cb-49c1-4604-973c-9171e4f67cc2\", \"description\": \"An asynchronous task associated with this tool_call_id has started running. Expect results to arrive later as developer messages that look roughly like this one (with 'type=async_tool' and a matching tool_call_id) but with a 'result' field. Note that there *may* be more than one result (i.e., a stream of results), but there doesn't have to be (there may be only one). The last result will come in a message with 'status=finished'.\"}",
+      "tool_call_id": "fc_823b15cb-49c1-4604-973c-9171e4f67cc2"
+    },
+    {
+      "role": "developer",
+      "content": "{\"type\": \"async_tool\", \"status\": \"finished\", \"tool_call_id\": \"fc_823b15cb-49c1-4604-973c-9171e4f67cc2\", \"description\": \"This is the final result for the asynchronous task associated with this tool_call_id. The task has completed. No further results will arrive for this tool_call_id.\", \"result\": \"{\\\"status\\\": \\\"acknowledged\\\"}\"}"
+    },
+    {
+      "role": "developer",
+      "content": "The interview is over. In one or two short natural sentences, say you're happy to call the interview here and thank them for their time. Do not ask any questions. Do not open a new topic."
+    },
+    {
+      "role": "assistant",
+      "content": "✓ I'm happy to call the interview to a close now—thank you for your time!"
+    }
+  ]
+}

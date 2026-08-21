@@ -1,0 +1,380 @@
+{
+  "session_id": "0ffaaaac-de36-4abe-9129-c2b8a875992e",
+  "started_at": "2026-08-20T19:34:33.262495+00:00",
+  "ended_at": "2026-08-20T19:34:55.853914+00:00",
+  "events": [
+    {
+      "timestamp": "2026-08-20T19:34:33.211301+00:00",
+      "event": "error",
+      "data": {
+        "error": "connection error: AsyncV1Client.connect() got an unexpected keyword argument 'filler_words'",
+        "fatal": false,
+        "processor": "DeepgramSTTService#0"
+      }
+    },
+    {
+      "timestamp": "2026-08-20T19:34:33.262484+00:00",
+      "event": "client_connected",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T19:34:33.262496+00:00",
+      "event": "session_started",
+      "data": {
+        "session_id": "0ffaaaac-de36-4abe-9129-c2b8a875992e"
+      }
+    },
+    {
+      "timestamp": "2026-08-20T19:34:33.264472+00:00",
+      "event": "flow_node_entered",
+      "data": {
+        "node": "Intro"
+      }
+    },
+    {
+      "timestamp": "2026-08-20T19:34:33.507174+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramSTTService#0",
+            "model": null,
+            "value": 0.0
+          },
+          {
+            "processor": "DeepgramSTTService#0",
+            "model": null,
+            "value": 0.0
+          },
+          {
+            "processor": "GroqLLMService#0",
+            "model": null,
+            "value": 0.0
+          },
+          {
+            "processor": "GroqLLMService#0",
+            "model": null,
+            "value": 0.0
+          },
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": null,
+            "value": 0.0
+          },
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": null,
+            "value": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T19:34:34.246643+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": 0.737166166305542
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T19:34:34.425919+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": {
+              "prompt_tokens": 1119,
+              "completion_tokens": 41,
+              "total_tokens": 1160,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_tokens": 21,
+              "input_audio_tokens": null,
+              "output_audio_tokens": null,
+              "cache_read_input_audio_tokens": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T19:34:34.425936+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": {
+              "prompt_tokens": 1119,
+              "completion_tokens": 41,
+              "total_tokens": 1160,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_tokens": 21,
+              "input_audio_tokens": null,
+              "output_audio_tokens": null,
+              "cache_read_input_audio_tokens": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T19:34:34.428594+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "value": 0.004580020904541016
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T19:34:34.428608+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "value": 0.00025391578674316406
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T19:34:34.428619+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": 0.9192225933074951
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T19:34:34.428624+00:00",
+      "event": "assistant_response",
+      "data": {
+        "text": "Hello! Are you ready to begin the interview?"
+      }
+    },
+    {
+      "timestamp": "2026-08-20T19:34:34.430940+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "value": 0.002009153366088867
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T19:34:34.430954+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "value": 0.0001010894775390625
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T19:34:34.519239+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "value": 0.08960700035095215
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T19:34:34.519869+00:00",
+      "event": "bot_started_speaking",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T19:34:34.573276+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "ttfa": 0.19960700035095214,
+            "ttfb": 0.08960700035095215,
+            "leading_silence": 0.11
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T19:34:37.210757+00:00",
+      "event": "error",
+      "data": {
+        "error": "connection error: AsyncV1Client.connect() got an unexpected keyword argument 'filler_words'",
+        "fatal": false,
+        "processor": "DeepgramSTTService#0"
+      }
+    },
+    {
+      "timestamp": "2026-08-20T19:34:37.233861+00:00",
+      "event": "bot_stopped_speaking",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T19:34:38.708956+00:00",
+      "event": "user_started_speaking",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T19:34:38.710886+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramSTTService#0",
+            "model": "nova-3",
+            "value": 0.0008809566497802734
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T19:34:39.020219+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "BaseSmartTurn",
+            "model": null,
+            "is_complete": true,
+            "probability": 0.9424859285354614,
+            "e2e_processing_time_ms": 53.460000024642795
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T19:34:41.212970+00:00",
+      "event": "error",
+      "data": {
+        "error": "connection error: AsyncV1Client.connect() got an unexpected keyword argument 'filler_words'",
+        "fatal": false,
+        "processor": "DeepgramSTTService#0"
+      }
+    },
+    {
+      "timestamp": "2026-08-20T19:34:41.213004+00:00",
+      "event": "error",
+      "data": {
+        "error": "connection failed 3 times immediately after connecting",
+        "fatal": false,
+        "processor": "DeepgramSTTService#0"
+      }
+    },
+    {
+      "timestamp": "2026-08-20T19:34:43.966967+00:00",
+      "event": "user_stopped_speaking",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T19:34:47.889995+00:00",
+      "event": "user_started_speaking",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T19:34:47.891455+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramSTTService#0",
+            "model": "nova-3",
+            "value": 9.12568712234497
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T19:34:47.891505+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramSTTService#0",
+            "model": "nova-3",
+            "value": 0.0007748603820800781
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T19:34:48.586212+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "BaseSmartTurn",
+            "model": null,
+            "is_complete": false,
+            "probability": 0.42187100648880005,
+            "e2e_processing_time_ms": 54.161959036719054
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T19:34:53.531610+00:00",
+      "event": "user_stopped_speaking",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T19:34:55.853832+00:00",
+      "event": "client_disconnected",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T19:34:55.853914+00:00",
+      "event": "session_ended",
+      "data": {
+        "reason": "client_disconnected"
+      }
+    }
+  ],
+  "conversation_history": [
+    {
+      "role": "developer",
+      "content": "Greet the candidate warmly in one short sentence, then ask if they are ready to begin the interview. Wait for a clear yes or confirmation. When they confirm, call start_interview. If they are not ready or ask a quick clarifying question, answer briefly and ask again when they are ready."
+    },
+    {
+      "role": "assistant",
+      "content": "✓ Hello! Are you ready to begin the interview?"
+    }
+  ]
+}

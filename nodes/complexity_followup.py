@@ -4,6 +4,7 @@ from loguru import logger
 from pipecat.flows import FlowManager, NodeConfig
 
 from nodes.conclusion import create_conclusion_node
+from nodes.session import record_flow
 
 
 async def record_complexity(
@@ -15,6 +16,12 @@ async def record_complexity(
         time_complexity,
         space_complexity,
     )
+    from_node = getattr(flow_manager, "current_node", None) or "complexity_followup"
+    record_flow(
+        "flow_transition",
+        {"from": from_node, "to": "conclusion", "via": "record_complexity"},
+    )
+    record_flow("flow_node_entered", {"node": "conclusion"})
     return "complexity recorded", create_conclusion_node()
 
 
@@ -26,10 +33,9 @@ def create_complexity_followup_node() -> NodeConfig:
             {
                 "role": "developer",
                 "content": (
-                    "Ask once: What are the time and space complexities of the "
-                    "approach you just described? After the user answers, use "
-                    "record_complexity. Do not evaluate, correct, or ask follow-up "
-                    "questions."
+                    "Ask once: What are the time and space complexities of the approach you just "
+                    "described? After the user answers, use record_complexity. Do not evaluate, "
+                    "correct, or ask follow-up questions."
                 ),
             }
         ],

@@ -1,0 +1,265 @@
+{
+  "session_id": "60063cfd-5588-4fbe-8668-fce050a01acf",
+  "started_at": "2026-08-20T07:27:41.018869+00:00",
+  "ended_at": "2026-08-20T07:27:48.972988+00:00",
+  "events": [
+    {
+      "timestamp": "2026-08-20T07:27:41.018859+00:00",
+      "event": "client_connected",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T07:27:41.018870+00:00",
+      "event": "session_started",
+      "data": {
+        "session_id": "60063cfd-5588-4fbe-8668-fce050a01acf"
+      }
+    },
+    {
+      "timestamp": "2026-08-20T07:27:41.020842+00:00",
+      "event": "flow_node_entered",
+      "data": {
+        "node": "Intro"
+      }
+    },
+    {
+      "timestamp": "2026-08-20T07:27:41.270110+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramSTTService#0",
+            "model": null,
+            "value": 0.0
+          },
+          {
+            "processor": "DeepgramSTTService#0",
+            "model": null,
+            "value": 0.0
+          },
+          {
+            "processor": "GroqLLMService#0",
+            "model": null,
+            "value": 0.0
+          },
+          {
+            "processor": "GroqLLMService#0",
+            "model": null,
+            "value": 0.0
+          },
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": null,
+            "value": 0.0
+          },
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": null,
+            "value": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T07:27:41.999891+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": 0.7273960113525391
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T07:27:42.174033+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": {
+              "prompt_tokens": 1119,
+              "completion_tokens": 42,
+              "total_tokens": 1161,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_tokens": 22,
+              "input_audio_tokens": null,
+              "output_audio_tokens": null,
+              "cache_read_input_audio_tokens": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T07:27:42.174049+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": {
+              "prompt_tokens": 1119,
+              "completion_tokens": 42,
+              "total_tokens": 1161,
+              "cache_read_input_tokens": null,
+              "cache_creation_input_tokens": null,
+              "reasoning_tokens": 22,
+              "input_audio_tokens": null,
+              "output_audio_tokens": null,
+              "cache_read_input_audio_tokens": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T07:27:42.175806+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "value": 0.004038095474243164
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T07:27:42.175817+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "value": 0.00017404556274414062
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T07:27:42.176590+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "GroqLLMService#0",
+            "model": "openai/gpt-oss-120b",
+            "value": 0.9043331146240234
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T07:27:42.176597+00:00",
+      "event": "assistant_response",
+      "data": {
+        "text": "Hello! Are you ready to begin the interview?"
+      }
+    },
+    {
+      "timestamp": "2026-08-20T07:27:42.178013+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "value": 0.0022089481353759766
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T07:27:42.178023+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "value": 6.914138793945312e-05
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T07:27:42.270882+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "value": 0.09419083595275879
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T07:27:42.271399+00:00",
+      "event": "bot_started_speaking",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T07:27:42.271405+00:00",
+      "event": "bot_started_speaking",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T07:27:42.343076+00:00",
+      "event": "metrics",
+      "data": {
+        "items": [
+          {
+            "processor": "DeepgramTTSService#0",
+            "model": "",
+            "ttfa": 0.2221908359527588,
+            "ttfb": 0.09419083595275879,
+            "leading_silence": 0.128
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-08-20T07:27:44.749937+00:00",
+      "event": "bot_stopped_speaking",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T07:27:44.749944+00:00",
+      "event": "bot_stopped_speaking",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T07:27:48.972977+00:00",
+      "event": "client_disconnected",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-08-20T07:27:48.972988+00:00",
+      "event": "session_ended",
+      "data": {
+        "reason": "client_disconnected"
+      }
+    }
+  ],
+  "conversation_history": [
+    {
+      "role": "developer",
+      "content": "Greet the candidate warmly in one short sentence, then ask if they are ready to begin the interview. Wait for a clear yes or confirmation. When they confirm, call start_interview. If they are not ready or ask a quick clarifying question, answer briefly and ask again when they are ready."
+    },
+    {
+      "role": "assistant",
+      "content": "✓ Hello! Are you ready to begin the interview?"
+    }
+  ]
+}
