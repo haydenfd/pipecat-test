@@ -17,7 +17,7 @@ from pipecat.transports.base_transport import BaseTransport, TransportParams
 from pipecat.workers.runner import WorkerRunner
 
 from config import get_bot_config
-from flow import create_greeting_node
+from nodes import create_discussion_node
 from services import create_services
 
 
@@ -59,12 +59,12 @@ async def run_bot(transport: BaseTransport, runner_args: RunnerArguments) -> Non
         transport=transport,
     )
 
-    # Start the greeting Flow only after SmallWebRTC has finished connecting.
+    # Start the interview flow only after SmallWebRTC has finished connecting.
     @transport.event_handler("on_client_connected")
     async def on_client_connected(transport: BaseTransport, client) -> None:
         """Initialize the conversation when a browser client joins the session."""
         logger.info("Client connected")
-        await flow_manager.initialize(create_greeting_node())
+        await flow_manager.initialize(create_discussion_node())
 
     # Cancel the worker when the browser disconnects so the next session starts cleanly.
     @transport.event_handler("on_client_disconnected")

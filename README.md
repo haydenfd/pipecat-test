@@ -1,8 +1,9 @@
-# Pipecat Flows starter
+# Pipecat interview flow
 
 A minimal voice assistant with:
 
-- Pipecat Flows for a greeting node and a simple `record_like` transition
+- Pipecat Flows for discussing an approach, capturing its time and space
+  complexity, and concluding the interview
 - SmallWebRTC for browser audio connections
 - Deepgram Nova 3 STT and Aura 2 TTS
 - Groq `openai/gpt-oss-120b` for the LLM
